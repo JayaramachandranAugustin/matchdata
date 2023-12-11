@@ -1,0 +1,11 @@
+server:
+  port: 8089
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      properties[key.serializer]: org.apache.kafka.common.serialization.StringSerializer
+      properties[value.serializer]: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties[schema.registry.url]: http://localhost:8081
+      application-id: match-app
